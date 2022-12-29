@@ -1,5 +1,11 @@
 import useSWR from "swr";
-import { Loading, Student, StudentList, Error } from "./components";
+import {
+  Loading,
+  Student,
+  StudentList,
+  Error,
+  EmptyStudent,
+} from "./components";
 import query from "./query";
 import { StudentType } from "./types";
 
@@ -17,12 +23,18 @@ function App() {
 
   return (
     <>
-      <h1 style={{ textAlign: "center" }}>기숙사 입소 학생 정보</h1>
-      <StudentList>
-        {data?.map((student) => (
-          <Student key={student.id} student={student} />
-        ))}
-      </StudentList>
+      <h1 style={{ textAlign: "center", margin: 0, padding: "2rem" }}>
+        기숙사 입소 학생 정보
+      </h1>
+      {data?.length ? (
+        <StudentList>
+          {data?.sort()?.map((student) => (
+            <Student key={student.id} student={student} />
+          ))}
+        </StudentList>
+      ) : (
+        <EmptyStudent />
+      )}
     </>
   );
 }
