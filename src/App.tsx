@@ -14,7 +14,8 @@ const fetcher = async (url: string) => (await query.get(url)).data;
 function App() {
   const { data, isLoading, error } = useSWR<StudentType[]>(
     "/students",
-    fetcher
+    fetcher,
+    { refreshInterval: 5000 }
   );
 
   if (isLoading) return <Loading />;
