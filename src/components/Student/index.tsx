@@ -3,6 +3,7 @@ import { useDeleteMode } from "../../store";
 import { StudentType } from "../../types";
 import * as S from "./style";
 import * as SVG from "../../assets";
+import query from "../../query";
 
 interface Prop {
   student: StudentType;
@@ -18,6 +19,8 @@ const Student = ({ student }: Prop) => {
 
   const onDelete = async () => {
     if (!confirm(`정말 "${student.name}"님을 삭제하시겠습니까?`)) return;
+
+    await query.delete(`/students/${student.id}`);
 
     mutate("/students", removeStudent());
   };
