@@ -10,7 +10,6 @@ const mockData: MockDataType = {
       //   num: 2,
       //   class: 1,
       //   grade: 2,
-      //   profileUrl: "https://bit.ly/3hVyrtL",
       // })),
       [],
       {},

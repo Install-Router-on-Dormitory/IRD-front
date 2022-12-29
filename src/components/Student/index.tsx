@@ -2,6 +2,7 @@ import { mutate } from "swr";
 import { useDeleteMode } from "../../store";
 import { StudentType } from "../../types";
 import * as S from "./style";
+import * as SVG from "../../assets";
 
 interface Prop {
   student: StudentType;
@@ -24,7 +25,7 @@ const Student = ({ student }: Prop) => {
   return (
     <S.Wrapper>
       {mode && <S.DeleteButton onClick={onDelete}>❌</S.DeleteButton>}
-      <S.StudentImg src={student.profileUrl} />
+      <SVG.UserCircle />
       <S.StudentInfo>
         <S.StudentName>{student.name}</S.StudentName>
         <S.StudentEmail>{student.email}</S.StudentEmail>

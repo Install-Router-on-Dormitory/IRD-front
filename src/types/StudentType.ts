@@ -5,7 +5,6 @@ interface StudentType {
   num: number;
   grade: number;
   class: number;
-  profileUrl: string;
 }
 
 export default StudentType;

@@ -21,12 +21,6 @@ export const DeleteButton = styled.div`
   cursor: pointer;
 `;
 
-export const StudentImg = styled.img`
-  width: 5rem;
-  height: 5rem;
-  border-radius: 100%;
-`;
-
 export const StudentInfo = styled.div`
   display: flex;
   flex-direction: column;
