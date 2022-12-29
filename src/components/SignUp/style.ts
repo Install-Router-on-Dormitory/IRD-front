@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   align-items: center;
 `;
 
-export const Content = styled.div`
+export const Content = styled.form`
   width: 80%;
   max-width: 35rem;
   background-color: #353535;
@@ -41,6 +41,11 @@ export const Inputs = styled.div`
   gap: 1rem;
 `;
 
+export const WrapInput = styled.div`
+  width: 100%;
+  text-align: right;
+`;
+
 export const Input = styled.input`
   width: 100%;
   font-size: 1rem;
@@ -54,6 +59,10 @@ export const Input = styled.input`
   @media (prefers-color-scheme: light) {
     background: #eeeeee;
   }
+`;
+export const Label = styled.div`
+  color: #e57373;
+  font-size: 0.8rem;
 `;
 
 export const Button = styled.button`
