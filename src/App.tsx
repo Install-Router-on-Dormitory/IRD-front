@@ -1,12 +1,14 @@
 import useSWR from "swr";
-import { Student, StudentList } from "./components";
+import { Loading, Student, StudentList } from "./components";
 import query from "./query";
 import { StudentType } from "./types";
 
 const fetcher = async (url: string) => (await query.get(url)).data;
 
 function App() {
-  const { data } = useSWR<StudentType[]>("/students", fetcher);
+  const { data, isLoading } = useSWR<StudentType[]>("/students", fetcher);
+
+  if (isLoading) return <Loading />;
 
   return (
     <>
