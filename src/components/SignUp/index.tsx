@@ -84,6 +84,7 @@ const SignUp = () => {
                 },
               })}
               placeholder="Password"
+              type="password"
             />
             <S.Label>{errors?.password?.message}</S.Label>
           </S.WrapInput>
