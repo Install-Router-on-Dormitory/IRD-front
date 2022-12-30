@@ -26,7 +26,7 @@ const SignUp = () => {
 
     try {
       await gauthQuery.post("/auth/signup", { ...form, verify: undefined });
-      navigate("/");
+      navigate("/success");
     } catch (e) {
       setError("password", { message: "회원가입 실패" });
     }

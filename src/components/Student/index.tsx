@@ -28,12 +28,16 @@ const Student = ({ student }: Prop) => {
   return (
     <S.Wrapper>
       {mode && <S.DeleteButton onClick={onDelete}>❌</S.DeleteButton>}
-      <SVG.UserCircle />
+      {student.profileUri ? (
+        <S.ProfileImg src={student.profileUri} />
+      ) : (
+        <SVG.UserCircle />
+      )}
       <S.StudentInfo>
         <S.StudentName>{student.name}</S.StudentName>
         <S.StudentEmail>{student.email}</S.StudentEmail>
         <div>
-          {student.grade}학년 {student.class}반 {student.num}번
+          {student.grade}학년 {student.classNum}반 {student.num}번
         </div>
       </S.StudentInfo>
     </S.Wrapper>

@@ -4,7 +4,8 @@ interface StudentType {
   email: string;
   num: number;
   grade: number;
-  class: number;
+  classNum: number;
+  profileUri: string;
 }
 
 export default StudentType;

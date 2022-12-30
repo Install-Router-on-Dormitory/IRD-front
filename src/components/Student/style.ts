@@ -27,6 +27,12 @@ export const StudentInfo = styled.div`
   justify-content: center;
 `;
 
+export const ProfileImg = styled.img`
+  border-radius: 100%;
+  width: 5rem;
+  height: 5rem;
+`;
+
 export const StudentName = styled.h2`
   margin: 0;
 `;
