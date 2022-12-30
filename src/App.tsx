@@ -4,8 +4,8 @@ import * as P from "./pages";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<P.MainPage />} />
-      <Route path="/signup" element={<P.SignUpPage />} />
+      <Route path="/" element={<P.SignUpPage />} />
+      <Route path="/admin" element={<P.MainPage />} />
     </Routes>
   );
 }
