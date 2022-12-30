@@ -25,7 +25,7 @@ const SignUp = () => {
       return setError("verify", { message: "이메일 인증을 해주세요" });
 
     try {
-      await gauthQuery.post("/auth/signup", form);
+      await gauthQuery.post("/auth/signup", { ...form, verify: undefined });
       navigate("/");
     } catch (e) {
       setError("password", { message: "회원가입 실패" });
