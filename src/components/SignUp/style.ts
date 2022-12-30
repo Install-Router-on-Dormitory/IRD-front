@@ -60,12 +60,22 @@ export const Input = styled.input`
     background: #eeeeee;
   }
 `;
-export const Label = styled.div`
-  color: #e57373;
+export const Label = styled.div<{ success?: boolean }>`
+  color: ${({ success }) => (success ? "#81C784" : "#e57373")};
   font-size: 0.8rem;
+  text-align: left;
 `;
 
 export const Button = styled.button`
   width: 100%;
   margin-top: 2rem;
+`;
+
+export const EmailVerify = styled.div`
+  display: flex;
+  gap: 0.5rem;
+`;
+
+export const VerifyBtn = styled.button`
+  white-space: nowrap;
 `;

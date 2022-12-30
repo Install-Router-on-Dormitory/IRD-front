@@ -16,4 +16,11 @@ const mockData: MockDataType = {
   },
 };
 
-export default mockData;
+const gauthMockData: MockDataType = {
+  post: {
+    "/auth/signup": [{}, {}],
+    "/email": [{}, {}],
+  },
+};
+
+export { mockData, gauthMockData };

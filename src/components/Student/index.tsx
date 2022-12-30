@@ -3,7 +3,7 @@ import { useDeleteMode } from "../../store";
 import { StudentType } from "../../types";
 import * as S from "./style";
 import * as SVG from "../../assets";
-import query from "../../query";
+import { query } from "../../query";
 
 interface Prop {
   student: StudentType;

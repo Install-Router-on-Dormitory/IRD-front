@@ -6,7 +6,7 @@ import {
   Loading,
   Error,
 } from "../components";
-import query from "../query";
+import { query } from "../query";
 import { StudentType } from "../types";
 
 const fetcher = async (url: string) => (await query.get(url)).data;
