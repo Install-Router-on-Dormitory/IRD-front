@@ -10,6 +10,7 @@ const gauthQuery =
     ? mockios(gauthMockData)
     : axios.create({
         baseURL: import.meta.env.VITE_GAUTH_URL,
+        withCredentials: true,
       });
 
 export { query, gauthQuery };
