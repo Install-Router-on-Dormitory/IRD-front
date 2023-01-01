@@ -1,9 +1,10 @@
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { gauthQuery } from "../../query";
+import EmailInput from "./EmailInput";
 import * as S from "./style";
 
-interface FormType {
+export interface FormType {
   email: string;
   password: string;
   verify: boolean;
@@ -32,44 +33,20 @@ const SignUp = () => {
     }
   };
 
-  const onVerify = async () => {
-    try {
-      await gauthQuery.post("/email", { email: watch("email") });
-      setValue("verify", true);
-    } catch (e) {
-      setError("email", { message: "이메일 인증 실패" });
-    }
-  };
-
   return (
     <S.Wrapper>
       <S.Content onSubmit={handleSubmit(onSubmit)}>
         <S.Title>GAUTH</S.Title>
 
         <S.Inputs>
-          <S.WrapInput>
-            <S.EmailVerify>
-              <S.Input
-                {...register("email", {
-                  required: true,
-                  pattern: {
-                    message: "gsm 계정을 사용해 주세요",
-                    value: /^[a-zA-Z0-9]+@gsm.hs.kr$/,
-                  },
-                })}
-                placeholder="@gsm.hs.kr"
-              />
-              {!watch("verify") && (
-                <S.VerifyBtn onClick={onVerify}>인증</S.VerifyBtn>
-              )}
-            </S.EmailVerify>
-            <S.Label>
-              {errors?.email?.message ?? errors?.verify?.message}
-            </S.Label>
-            {watch("verify") && (
-              <S.Label success>이메일을 확인해 주세요</S.Label>
-            )}
-          </S.WrapInput>
+          <EmailInput
+            watch={watch}
+            setError={setError}
+            setValue={setValue}
+            register={register}
+            emailError={errors.email?.message}
+            verifyError={errors.verify?.message}
+          />
 
           <S.WrapInput>
             <S.Input
